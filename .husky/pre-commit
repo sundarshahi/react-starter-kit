@@ -1,0 +1,2 @@
+pnpm dlx validate-branch-name
+pnpm dlx lint-staged
