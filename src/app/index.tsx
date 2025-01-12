@@ -1,10 +1,10 @@
-import BreadcrumbEx from '@/components/comp-450';
+import { Label } from 'ui/label';
 
 export default function Component() {
   return (
     <div className="p-8">
-      <BreadcrumbEx />
+      Hello
+      <Label>Hey</Label>
     </div>
-    // </div>
   );
 }

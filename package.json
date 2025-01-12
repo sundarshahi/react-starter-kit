@@ -3,9 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": {
+    "name": "Sundar Shahi Thakuri",
+    "url": "https://github.com/sundarshahi",
+    "email": "shahithakurisundar@gmail.com"
+  },
   "packageManager": "pnpm@9.15.0",
   "engines": {
-    "node": ">=23",
+    "node": ">=22",
     "npm": "please-use-pnpm",
     "yarn": "please-use-pnpm",
     "pnpm": ">=9.15.0"
