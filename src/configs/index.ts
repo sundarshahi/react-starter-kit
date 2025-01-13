@@ -13,6 +13,6 @@ function getConfig() {
     case 'local':
       return createLocalConfig();
     default:
-      throw new Error('Invalid APP_ENV "${import.meta.env.APP_ENV}"');
+      throw new Error(`Invalid APP_ENV "${import.meta.env.APP_ENV}"`);
   }
 }

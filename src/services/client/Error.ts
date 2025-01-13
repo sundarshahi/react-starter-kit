@@ -36,6 +36,7 @@ export const getStandardizedApiError = (
       type: 'basic',
     } as BasicApiError);
   }
+
   if (isFormErrorData(errorData)) {
     return new ApiError({
       ...standarizedError,

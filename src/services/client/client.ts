@@ -8,14 +8,14 @@ import {
 
 import { appConfig } from '@/configs';
 
-const axiosClient = axios.create({
+const client = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
   baseURL: appConfig.apiURL,
 });
 
-axiosClient.interceptors.request.use(requestSuccessInterceptor);
-axiosClient.interceptors.response.use(responseSuccessInterceptor, responseFailureInterceptor);
+client.interceptors.request.use(requestSuccessInterceptor);
+client.interceptors.response.use(responseSuccessInterceptor, responseFailureInterceptor);
 
-export default axiosClient;
+export default client;
