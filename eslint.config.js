@@ -44,6 +44,7 @@
 
 
 import js from '@eslint/js'
+import pluginQuery from '@tanstack/eslint-plugin-query'
 import importPlugin from 'eslint-plugin-import'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
 import prettier from 'eslint-plugin-prettier/recommended'
@@ -59,6 +60,7 @@ export default tseslint.config(
     files: ['**/*.{ts,tsx}'],
     extends: [
       js.configs.recommended,
+       ...pluginQuery.configs['flat/recommended'],
        ...tseslint.configs.recommendedTypeChecked,
       react.configs.flat.recommended,
       importPlugin.flatConfigs.recommended,
