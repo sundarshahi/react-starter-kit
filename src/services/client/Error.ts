@@ -1,7 +1,7 @@
 import { AxiosError } from 'axios';
 import zod from 'zod';
 
-import { BasicApiError, BasicErrorData, FormApiError, FormErrorData, UnknownApiError } from './types';
+import type { BasicApiError, BasicErrorData, FormApiError, FormErrorData, UnknownApiError } from './types';
 
 export class ApiError<T extends BasicApiError | FormApiError | UnknownApiError> extends Error {
   readonly originalError;

@@ -8,14 +8,16 @@ import {
 
 import { appConfig } from '@/configs';
 
-const client = axios.create({
+export const client = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
   baseURL: appConfig.apiURL,
+  timeout: 10000,
+  validateStatus: function (status) {
+    return status >= 200 && status < 500;
+  },
 });
 
 client.interceptors.request.use(requestSuccessInterceptor);
 client.interceptors.response.use(responseSuccessInterceptor, responseFailureInterceptor);
-
-export default client;
