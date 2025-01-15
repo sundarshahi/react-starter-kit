@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-
 import {
   browserTracingIntegration,
   captureConsoleIntegration,
@@ -14,7 +12,7 @@ type Logger = Record<LogLevel, (message: string | Error) => void> & Record<strin
 
 const initLogger = () =>
   init({
-    dsn: import.meta.env.VITE_SENTRY_DSN,
+    dsn: import.meta.env.VITE_SENTRY_DSN as string,
     integrations: [
       httpClientIntegration({
         failedRequestStatusCodes: [[400, 599]],
