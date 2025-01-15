@@ -1,0 +1,29 @@
+{
+  "name": "e2e-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "install:browsers": "playwright install --with-deps",
+    "test": "playwright test",
+    "test:chrome": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:safari": "playwright test --project=webkit",
+    "test:debug": "playwright test --debug",
+    "lint": "eslint \"./**/*.ts\" && echo \"lint success\"",
+    "lint:fix": "eslint --fix \"./**/*.ts\" && echo \"lint success\"",
+    "clean": "rm -rf test-results && rm -rf test-report",
+    "serve": "http-server --proxy $(grep PLAYWRIGHT_HOST .env | cut -d '=' -f2)? ../build --port 1337"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "typescript": "5.7.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "eslint-plugin-playwright": "^2.1.0",
+    "http-server": "14.1.1"
+  }
+}
