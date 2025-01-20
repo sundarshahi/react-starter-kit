@@ -1,5 +1,5 @@
 {
-  "git.branchProtection": ["main","dev","development","staging"],
+  "git.branchProtection": ["main", "dev", "development", "staging"],
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "always",
@@ -10,12 +10,7 @@
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "stylelint.configFile": ".stylelintrc.json",
   "stylelint.snippet": ["css", "less", "postcss", "scss"],
-  "stylelint.validate": [
-    "css",
-    "less",
-    "postcss",
-    "scss"
-  ],
+  "stylelint.validate": ["css", "less", "postcss", "scss"],
   "[javascript]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   },

@@ -13,8 +13,7 @@ module.exports = {
         ],
       },
     ],
-    "declaration-block-trailing-semicolon":null,
     "no-descending-specificity": null,
   },
-  ignoreFiles: ["src/tailwind.base.css"],
+  ignoreFiles: ["src/styles/tailwind.base.css"],
 };

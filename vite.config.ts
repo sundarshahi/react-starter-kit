@@ -1,6 +1,6 @@
-/// <reference types="vitest" />
+import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
+import viteReact from '@vitejs/plugin-react';
 
-import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
 
@@ -11,7 +11,7 @@ const manualChunks = (id: string) => {
 };
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [TanStackRouterVite({ routesDirectory: path.resolve(__dirname, './src/app/routes') }), viteReact()] as never,
 
   resolve: {
     alias: {

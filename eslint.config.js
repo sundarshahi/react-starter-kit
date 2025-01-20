@@ -6,11 +6,22 @@ import prettier from 'eslint-plugin-prettier/recommended'
 import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
+import testingLibrary from 'eslint-plugin-testing-library'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
   { ignores: ['dist','e2e'] },
+
+  {
+	
+		files: ["src/**/*.test.tsx"],
+		...testingLibrary.configs['flat/react'],
+    rules: {
+      "testing-library/prefer-user-event": "error"
+    }
+	},
+
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
@@ -54,5 +65,6 @@ export default tseslint.config(
       'react/react-in-jsx-scope': ['off'],
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }]
     }
+    
   }
 )

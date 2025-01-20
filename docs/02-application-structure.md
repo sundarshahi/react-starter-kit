@@ -7,24 +7,26 @@
 `├──`[`.husky`](../.husky) — Husky scripts for git hooks <br>
 `├──`[`docker`](../docker) — Docker related files<br>
 `├──`[`docs`](../docs) — Application documentation files <br>
-`├──`[`e2e`](../e2e) — Cypress E2E tests project <br>
-`├──`[`e2e-playwright`](../e2e-playwright) — Playwright E2E tests project <br>
+`├──`[`e2e`](../e2e) — Playwright E2E tests project <br>
 `├──`[`plop-templates`](../plop-templates) — Templates for plop commands <br>
 `├──`[`public`](../public) — React application public files <br>
 `├──`[`scripts`](../scripts) — Custom scripts (ex. fetching translations) <br>
-`├──`[`src`](../src) — React application source code <br>
+`├──`[`src`](../src) —Application source code <br>
 
 ## Source code structure
 
-`├──`[`app`](../src/app) — Configuration of API client and collection of API actions (queries and mutations) definition. <br>
-`├──`[`api`](../src/api) — Configuration of API client and collection of API actions (queries and mutations) definition. <br>
-`├──`[`routes`](../src/routes) — React application Routing and features (view components/modules) <br>
+`├──`[`src`](../src) —Application source code <br>
+`├──`[`app`](../src/app) — Routes, react specific and library's core entrypoint for app.
+`├──`[`context`](../src/app/context) - Global contexts using across React application. Each context has its context and controller files <br>
+`├──`[`hooks`](../src/app/hooks) - Global hooks used across the application. The best approach is to keep flat structure of hooks in this directory <br>
+`├──`[`providers`](../src/app/providers) - Configuration of providers tree in React application <br>
+`├──`[`components`](../src/app/components) - Keep Application's Components (except base ui) in this directory <br>
+`├──`[`services`](../src/services) — Configuration of API client and collection of API actions (queries and mutations) definition. and any other service layer logic <br>
+`├──`[`react-query`](../src/react-query) — Setup and config for react-query<br>
 `├──`[`assets`](../src/assets) - React application public assets (images, icons, custom fonts etc.) <br>
-`├──`[`context`](../src/context) - Global contexts using across React application. Each context has its context and controller files <br>
-`├──`[`hooks`](../src/hooks) - Global hooks used across the application. The best approach is to keep flat structure of hooks in this directory <br>
-`├──`[`i18n`](../src/i18n) - Configuration of internationalization module in SPA application. It also contains JSON files with application translations managed with Babelsheet tool <br>
-`├──`[`providers`](../src/providers) - Configuration of providers tree in React application <br>
+`├──`[`i18n`](../src/i18n) - Configuration of internationalization module in SPA application. It also contains JSON files with application translations <br>
 `├──`[`tests`](../src/tests) - Configuration of React application unit tests <br>
 `├──`[`types`](../src/types) - Global types used across the application <br>
-`├──`[`ui`](../src/component/ui) - Base UI components used across the application. The best approach is to keep flat structure of UI components in this directory <br>
-`├──`[`utils`](src/utils) - Base utility functions used across the application. <br>
+`├──`[`design-system`](../src/design-system/) - Base UI components used across the application. The best approach is to keep flat structure of UI components in this directory <br>
+`├──`[`lib`](src/lib) - Base utility functions used across the application. <br>
+`├──`[`instrumentation`](src/instrumentation) - Utility and functions for error and logging <br>
