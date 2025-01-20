@@ -8,7 +8,8 @@ import { enableMocking } from './setupMSW';
 const container = document.getElementById('root');
 const root = createRoot(container as Element);
 
-await enableMocking().then(() =>
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
+enableMocking().then(() =>
   root.render(
     <StrictMode>
       <App />

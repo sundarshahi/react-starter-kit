@@ -16,7 +16,7 @@ declare global {
 global.MutationObserver = class {
   disconnect(): void {}
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  observe(target: Node, options?: MutationObserverInit): void {}
+  observe(_target: Node, _options?: MutationObserverInit): void {}
   takeRecords(): MutationRecord[] {
     return [];
   }

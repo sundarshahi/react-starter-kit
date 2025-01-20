@@ -28,7 +28,7 @@ export const ApiClientContextController = ({ children }: ApiClientControllerProp
   const { handleErrors, shouldHandleGlobalError } = useHandleQueryErrors();
 
   const mutationCache = new MutationCache({
-    onError: (err, variables, context, mutation) => {
+    onError: (err, _variables, _context, mutation) => {
       const error = err as StandardizedApiError;
       if (shouldHandleGlobalError((mutation.meta as ExtendedQueryMeta)?.error, error?.statusCode)) {
         handleErrors(error);

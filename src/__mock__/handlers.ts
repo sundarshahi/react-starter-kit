@@ -31,7 +31,7 @@ const meHandler = http.get<PathParams, DefaultBodyType, GetMeQueryResponse>('/me
 });
 
 const createUsers = (numUsers = 40) => {
-  return Array.from({ length: numUsers }, (el, index) => ({ id: `${index}`, name: `User ${index + 1}` }));
+  return Array.from({ length: numUsers }, (_, index) => ({ id: `${index}`, name: `User ${index + 1}` }));
 };
 
 const usersHandler = http.get<PathParams, DefaultBodyType, GetUsersResponse>('/users', ({ request }) => {
