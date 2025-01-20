@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 export const appConfigSchema = z.object({
-  env: z.enum(['local', 'staging', 'production']),
+  env: z.enum(['test', 'local', 'development', 'staging', 'production']),
   apiURL: z.string(),
   mocksEnabled: z.boolean().default(false),
 });

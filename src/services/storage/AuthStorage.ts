@@ -90,7 +90,7 @@ const storage: Storage = {
   setItem: (key: string, value: string) => sessionStorage.setItem(key, value),
   removeItem: (key: string) => sessionStorage.removeItem(key),
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onError: (error: unknown) => {
+  onError: (_error: unknown) => {
     // handle errors here
   },
 };

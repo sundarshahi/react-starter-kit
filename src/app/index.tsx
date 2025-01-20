@@ -1,10 +1,29 @@
-import { Label } from 'ui/label';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { RouterProvider, createRouter } from '@tanstack/react-router';
 
-export default function Component() {
+import { logger } from '@/instrumentation/logger';
+import { routeTree } from '@/routeTree.gen';
+import { AppProviders } from './providers/AppProviders';
+
+const openReactQueryDevtools = import.meta.env.DEV;
+
+if (import.meta.env.VITE_SENTRY_DSN) {
+  logger.init();
+}
+
+export const router = createRouter({ routeTree });
+
+declare module '@tanstack/react-router' {
+  interface Register {
+    router: typeof router;
+  }
+}
+
+export default function App() {
   return (
-    <div className="p-8">
-      Hello
-      <Label>Hey</Label>
-    </div>
+    <AppProviders>
+      <RouterProvider router={router} />
+      {openReactQueryDevtools && <ReactQueryDevtools initialIsOpen={false} />}
+    </AppProviders>
   );
 }

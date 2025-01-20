@@ -1,9 +1,9 @@
 import { MutationKey, UseMutationOptions, useMutation as useRQMutation } from '@tanstack/react-query';
 
-// import { AxiosMutationsType, mutations } from 'api/actions';
-
+import { AxiosMutationsType, mutations } from '@/services/actions';
 import { ExtendedQueryMeta, StandardizedApiError } from '@/services/client/types';
 
+import { useApiClient } from '../useApiClient';
 import { DataForMutation, GetMutationParams } from './useMutation.types';
 
 /**
@@ -12,7 +12,6 @@ import { DataForMutation, GetMutationParams } from './useMutation.types';
  * This hook uses proper mutating strategy provided via ApiClientContext
  * @see ApiClientContextController.ts
  * */
-type AxiosMutationsType = object;
 
 export const useMutation = <Key extends keyof AxiosMutationsType, TError = StandardizedApiError>(
   mutation: Key,
@@ -23,9 +22,9 @@ export const useMutation = <Key extends keyof AxiosMutationsType, TError = Stand
     meta?: Partial<ExtendedQueryMeta>;
   },
 ) => {
-  // const { client } = useApiClient();
-  // const mutationFn = mutations[mutation](client);
-  const mutationFn = (args: unknown) => args;
+  const { client } = useApiClient();
+  const mutationFn = mutations[mutation](client);
+
   const mutationKey: MutationKey = [mutation];
 
   return useRQMutation({

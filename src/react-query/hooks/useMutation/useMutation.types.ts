@@ -1,14 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { AxiosMutationsType } from '@/services/actions';
+import { Unwrap } from '@/services/client/types';
 
-// import { Unwrap } from '@/services/client/types';
-// import { AxiosMutationsType } from 'api/actions';
-
-type AxiosMutationsType = object;
-
-export type DataForMutation<T> = T;
-// export type DataForMutation<TMutationKey extends keyof AxiosMutationsType> = Unwrap<
-//   ReturnType<ReturnType<AxiosMutationsType[TMutationKey]>>
-// >;
+export type DataForMutation<TMutationKey extends keyof AxiosMutationsType> = Unwrap<
+  ReturnType<ReturnType<AxiosMutationsType[TMutationKey]>>
+>;
 
 export type GetMutationParams<Key extends keyof AxiosMutationsType> =
   ReturnType<AxiosMutationsType[Key]> extends (value: infer Params) => any
