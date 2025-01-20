@@ -10,8 +10,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Copy envs
-        run: cp .env.dist .env
       - name: Install root dependencies
         uses: bahmutov/npm-install@v1
       - name: Test & coverage
