@@ -13,7 +13,7 @@ const commitizenTypes = [
 ];
 const pattern = `^((${commitizenTypes.join(
   "|"
-)})(\/[a-zA-Z0-9_.-]+){1,2}|changeset-release/master)$`;
+)})(\/[a-zA-Z0-9_.-]+){1,2}|changeset-release/main)$`;
 
 module.exports = {
   pattern,
