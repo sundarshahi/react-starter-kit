@@ -12,7 +12,7 @@
     "lint": "eslint \"./**/*.ts\" && echo \"lint success\"",
     "lint:fix": "eslint --fix \"./**/*.ts\" && echo \"lint success\"",
     "clean": "rm -rf test-results && rm -rf test-report",
-    "serve": "http-server --proxy $(grep PLAYWRIGHT_HOST .env | cut -d '=' -f2)? ../build --port 1337"
+    "serve": "http-server --proxy $(grep PLAYWRIGHT_HOST .env | cut -d '=' -f2)? ../dist --port 1337"
   },
   "keywords": [],
   "author": "",
