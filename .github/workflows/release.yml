@@ -34,3 +34,7 @@ jobs:
           commit: 'ci: bump version'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        run: git push --follow-tags
