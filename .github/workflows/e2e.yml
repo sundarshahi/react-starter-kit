@@ -1,5 +1,8 @@
 name: e2e Tests
-on: pull_request
+on: 
+  pull_request:
+   branches:
+    - main
 
 jobs:
   prepare_app:
